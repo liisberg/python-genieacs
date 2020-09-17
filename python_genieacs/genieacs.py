@@ -106,13 +106,13 @@ class Connection(object):
 
     def device_get_by_id(self, device_id):
         """Get all data of a device identified by its ID"""
-        quoted_id = requests.utils.quote("{\"_id\":\"" + device_id + "\"}", safe = '')
+        quoted_id = requests.utils.quote("{\"_id\":\"" + device_id + "\"}", safe = '%')
         return self.__request_get("/devices/" + "?query=" + quoted_id)
 
-    def device_get_by_MAC(self, device_MAC):
+    def device_get_by_MAC(self, device_mac):
         """Get all data of a device identified by its MAC address"""
-        quoted_MAC = requests.utils.quote("{\"summary.mac\":\"" + device_MAC + "\"}", safe = '')
-        return self.__request_get("/devices/" + "?query=" + quoted_MAC)
+        quoted_mac = requests.utils.quote("{\"VirtualParameters.Mac\":\"" + device_mac + "\"}", safe = '')
+        return self.__request_get("/devices/" + "?query=" + quoted_mac)
 
     def device_get_by_serial(self, device_serial):
         """Get all data of a device identified by its Serial"""

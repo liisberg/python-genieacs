@@ -3,7 +3,7 @@
 #
 # Usage examples for python-genieacs
 
-import genieacs
+import python_genieacs as genieacs
 
 # set a device_id for the following methods
 device_id = "000149-c1500-000149014AF8"
